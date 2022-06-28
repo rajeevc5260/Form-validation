@@ -1,6 +1,7 @@
 const form = document.getElementById('form');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
+const phone = document.getElementById('phone');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 
@@ -14,6 +15,7 @@ function checkInputs() {
 	// trim to remove the whitespaces
 	const usernameValue = username.value.trim();
 	const emailValue = email.value.trim();
+	const phoneValue = phone.value.trim();
 	const passwordValue = password.value.trim();
 	const password2Value = password2.value.trim();
 	
@@ -30,22 +32,18 @@ function checkInputs() {
 	} else {
 		setSuccessFor(email);
 	}
-	
-	// if(passwordValue === '') {
-	// 	setErrorFor(password, 'Password cannot be blank');
-	// } else {
-	// 	setSuccessFor(password);
+	// if(phoneValue ===''){
+
+	// 	setErrorFor(phone,'Phone number cannot be blank');
+	// }
+	// else if (phoneValue.length < 10  ) {
+
+	// 	setErrorFor(phone, 'Not valid');
+	// }
+	// else{
+	// 	setSuccessFor(phone);
 	// }
 	
-	// if(password2Value === '') {
-	// 	setErrorFor(password2, 'Password2 cannot be blank');
-	// } else if(passwordValue !== password2Value) {
-	// 	setErrorFor(password2, 'Passwords does not match');
-	// } else{
-	// 	setSuccessFor(password2);
-	// }
-
-
 
     if(passwordValue === '') {
         setErrorFor(password, 'Password is required');
@@ -53,13 +51,12 @@ function checkInputs() {
      else if (passwordValue.length < 8 ) {
         setErrorFor(password, 'Password must be at least 8 character.');
     } 
-    else if (passwordValue.match(/[!\@\#\$\%\^\&\*\(\)\_\-\+\=\<\>\.\,]/)){
-        setErrorFor(password, 'Password must contain lowercase, Uppercase and special characters');
-    }
     else {
         setSuccessFor(password);
     }
-    
+	if (passwordValue.match(/[!\@\#\$\%\^\&\*\(\)\_\-\+\=\<\>\.\,]/)){
+        setErrorFor(password, 'Password must contain lowercase, Uppercase and special characters');
+    }
 
     if(password2Value === '') {
         setErrorFor(password2, 'Please confirm your password');
