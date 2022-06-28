@@ -32,18 +32,32 @@ function checkInputs() {
 	} else {
 		setSuccessFor(email);
 	}
-	// if(phoneValue ===''){
+	if(phoneValue ===''){
 
-	// 	setErrorFor(phone,'Phone number cannot be blank');
-	// }
-	// else if (phoneValue.length < 10  ) {
+		setErrorFor(phone,'Phone number cannot be blank');
+	}
+	else if (phoneValue.length < 10  ) {
 
-	// 	setErrorFor(phone, 'Not valid');
-	// }
-	// else{
-	// 	setSuccessFor(phone);
-	// }
-	
+		setErrorFor(phone, 'Not valid');
+	}
+	else{
+		setSuccessFor(phone);
+	}
+	var phone_input = document.getElementById("phone");
+
+	phone_input.addEventListener('input', () => {
+	phone_input.setCustomValidity('');
+	phone_input.checkValidity();
+	});
+
+	phone_input.addEventListener('invalid', () => {
+	if(phone_input.value === '') {
+		phone_input.setCustomValidity('Enter phone number!');
+		setErrorFor(phone, 'Not valid');
+	} else {
+		phone_input.setCustomValidity('Enter phone number in this format: 123-456-7890');
+	}
+	});
 
     if(passwordValue === '') {
         setErrorFor(password, 'Password is required');
