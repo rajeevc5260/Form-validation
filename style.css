@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+
 
 * {
 	box-sizing: border-box;
@@ -7,13 +6,22 @@
 
 body {
 	background-color: #e49400;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'poppins', sans-serif;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
 	margin: 0;
 }
+.login {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	width: 500px;
+	max-width: 100%;
+}
+
 
 .container {
 	background-color: #fff;
@@ -26,7 +34,7 @@ body {
 
 .header {
 	border-bottom: 1px solid #f0f0f0;
-	background-color: #f7f7f7;
+	background-color: #e49400c9;
 	padding: 20px 40px;
 }
 
@@ -62,7 +70,7 @@ body {
 
 .form-control input:focus {
 	outline: 0;
-	border-color: #777;
+	border-color: rgb(119, 119, 119);
 }
 
 .form-control.success input {
