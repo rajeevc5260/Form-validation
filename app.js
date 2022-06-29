@@ -55,7 +55,7 @@ function checkInputs() {
 		phone_input.setCustomValidity('Enter phone number!');
 		setErrorFor(phone, 'Not valid');
 	} else {
-		phone_input.setCustomValidity('Enter phone number in this format: 123-456-7890');
+		phone_input.setCustomValidity('Enter phone number in this format: xxx-xxx-xxxx');
 	}
 	});
 
