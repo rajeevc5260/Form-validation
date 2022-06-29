@@ -12,10 +12,11 @@
 </head>
 <body>
 
-    <div class="container login">
+    <div class="login">
         <div class="header">
             <h2>Login</h2>
         </div>
+        <form action="" id="form" class="form"></form>
             <div class="form-control">
                 <label for="username">Email</label>
                 <input type="email" placeholder="example@gmail.com" id="email" />
@@ -30,15 +31,49 @@
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
             </div>
-            <button onclick="">Register</button>
+            <button onclick="">Login</button>
         </form>
     </div>
 
     
 
+    <script>
+        form.addEventListener('Login', e => {
+	e.preventDefault();
+	
+	checkInputs();
+   });
 
 
-    <script src="app.js"></script>
+   function checkInputs() {
+	// trim to remove the whitespaces
+	const emailValue = email.value.trim();
+	const passwordValue = password.value.trim();
+	
+	if(emailValue === '') {
+		setErrorFor(email, 'Email cannot be blank');
+	} else if (!isEmail(emailValue)) {
+		setErrorFor(email, 'Not a valid email');
+	} else {
+		setSuccessFor(email);
+	}
+
+
+    if(passwordValue === '') {
+        setErrorFor(password, 'Password is required');
+    }
+     else if (passwordValue.length < 8 ) {
+        setErrorFor(password, 'Password must be at least 8 character.');
+    } 
+    else {
+        setSuccessFor(password);
+    }
+	if (passwordValue.match(/[!\@\#\$\%\^\&\*\(\)\_\-\+\=\<\>\.\,]/)){
+        setErrorFor(password, 'Password must contain lowercase, Uppercase and special characters');
+    }
+   }
+    </script>
+
 
 </body>
 </html>
