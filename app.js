@@ -10,7 +10,9 @@ form.addEventListener('submit', e => {
 	
 	checkInputs();
 });
-
+// document.getElementById("myButton").onclick = function () {
+// 	location.href = "login.html";
+// };
 function checkInputs() {
 	// trim to remove the whitespaces
 	const usernameValue = username.value.trim();
